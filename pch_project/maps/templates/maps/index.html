@@ -14,37 +14,23 @@
   <p>Submit your route</p>
     {% load crispy_forms_tags %}
     {% crispy form %}
+  <div class="card">
+    <!--Card content-->
+    <div class="card-body">
+        <!--Title-->
+        <h4 class="card-title">How to</h4>
+        <!--Text-->
+      <ul>
+        <li class="card-text">Go to <a href="https://www.google.com/maps/d/">Google MyMaps</a></li>
+        <li class="card-text">Create a new map and select add directions. Input your start and end points.</li>
+        <li class="card-text">Select "export as KML" in the menu next to the map name. Select to export only your direction layer as a KML.</li>
+        <li class="card-text">Upload your KML here.</li>
+      </ul>
+
+
+    </div>
+  </div>
+
 </div>
-
-
-  <script>
-    let map;
-
-    function initMap() {
-      map = new google.maps.Map(document.getElementById('map'), {
-        center: {
-          lat: 40.6936,
-          lng: -89.5890
-        },
-        zoom: 13
-      });
-      map.data.loadGeoJson('http://127.0.0.1:8000/static/maps/ArterialRecon.geojson');
-    }
-
-  </script>
-
-  <style>
-    map.data.setStyle( {
-      fillColor: '#2687bf',
-      fillOpacity: .3,
-      strokeWeight: 0
-    }
-    );
-  </style>
-
-
-
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA22pBq2fiCjK712IAkC5W3PyRJHlkUtZs&callback=initMap" async
-    defer></script>
 
 {% endblock %}

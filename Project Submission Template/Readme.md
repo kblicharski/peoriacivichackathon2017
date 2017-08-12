@@ -1,11 +1,9 @@
-# Peoria Civic Hackathon Submission Example
+# Peor.io
 
-This is a sample submission for the Peoria Civic Hackathon. This is just a sample of what your repo can look like when you submit it
-to us as part of the final process for judging the hackathon.
 
 ## Description
 
-A brief introduction to your project. It should include the motivation behind the project and also how it addresses the challenge statement.
+Peor.io is a Django web application that aims that aims to assist people in getting information on ongoing infrastructure projects in Peoria. Users can see the location of current projects on a Google map and determine if their planned directions will intersect.
 
 ## Screenshots
 
@@ -13,12 +11,16 @@ If possible, provide a couple screenshots of your project. You can use a tool li
 
 ## Data/APIs used
 
-If relevant, provide a list of Data and APIs you used in this project.
+Django
+django-crispy-forms
+jQuery
+Google Maps API
+Bootstrap
 
 ## Team Members
 
-+ [name-of-a-team-member](URL to this member's github account)
-+ [name-of-a-team-member](URL to this member's github account)
-+ [name-of-a-team-member](URL to this member's github account)
-+ [name-of-a-team-member](URL to this member's github account)
-+ [name-of-a-team-member](URL to this member's github account)
+kblicharski https://github.com/kblicharski/
+
+madsilva https://github.com/madsilva/
+
+sgoskowicz https://github.com/sgoskowicz

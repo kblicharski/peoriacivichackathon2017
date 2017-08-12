@@ -1,5 +1,5 @@
 # Peor.io
-![alt text](https://raw.githubusercontent.com/kblicharski/peoriacivichackathon2017/master/images/bannertest.png)
+![alt text](https://raw.githubusercontent.com/kblicharski/peoriacivichackathon2017/master/images/bannerstyle3long.png)
 
 ## Description
 

@@ -1,8 +1,6 @@
-from django.forms import ModelForm
-from .models import Route
+from django import forms
 
-class RouteForm(ModelForm):
-    class Meta:
-        model = Route
-        fields = ['name', 'kml']
+class RouteForm(forms.Form):
+    name = forms.CharField(max_length=30)
+    kml = forms.FileField()
 

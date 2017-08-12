@@ -1,6 +1,4 @@
-.container {
-    margin-top: 10px;
-}
+
 
 #map {
       height: 80vh;
@@ -12,3 +10,20 @@ html, body {
       padding: 0;
       background: transparent;
     }
+
+.header-image {
+    max-width: 100%;
+}
+
+.navbar {
+    background-image: url('media/maps/bannertest.png');
+}
+
+.navbar-brand {
+    font-size: 350%;
+}
+
+
+.bottom-padding {
+    padding-bottom: 20px;
+}

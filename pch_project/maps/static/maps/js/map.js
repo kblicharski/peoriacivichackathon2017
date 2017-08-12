@@ -1,4 +1,4 @@
-let map;
+var map;
 
 function initMap(mapObject) {
   map = new google.maps.Map(mapObject.mapDiv, {
@@ -48,3 +48,11 @@ function loadData() {
   }
 }
 
+function addKml(kmlPath) {
+  let ctaLayer = new google.maps.KmlLayer({
+    'url': kmlPath,
+    'map': map
+  });
+
+  console.log(ctaLayer.getUrl());
+}

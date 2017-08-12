@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   {% load static %}
   <link rel="stylesheet" type="text/css" href="{% static 'maps/style.css' %}">
+  <!-- Change so that we aren't publicly displaying our API key -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA22pBq2fiCjK712IAkC5W3PyRJHlkUtZs&callback=initMap" async
     defer></script>
 </head>
@@ -35,7 +36,9 @@
         mapDiv: document.getElementById('map')
       }
       initMap(mapObject);
+      addKml('http://127.0.0.1:8000/media/20170812081020-58162-map.kml');
     });
+  </script>
 
 </body>
 </html>

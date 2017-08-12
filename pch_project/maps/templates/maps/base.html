@@ -20,32 +20,13 @@
 <body>
   <div class="container">
     <div class="row">
-      <div class="col-sm-12">
-        <nav class="navbar navbar-default">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <a class="navbar-brand" href="{% url 'index' %}">WebSiteName</a>
-            </div>
-            <ul class="nav navbar-nav">
-              <li><a href="#">Link 1</a></li>
-            </ul>
-          </div>
-        </nav>
-      </div>
+        <div class="col-sm-12">
+            {% block nav %}{% include 'maps/navbar.html' %}{% endblock %}
+        </div>
     </div>
     <div class="row">
-      <div class="col-xs-7">
-        <div id="map"></div>
-      </div>
-      <div class="col-sm-5">
-        <p>Submit your route</p>
-        <form method="post" action="" enctype=multipart/form-data>
-          {% csrf_token %} {{ form.as_p }}
-          <input type="submit" value="submit">
-        </form>
-      </div>
+        {% block content %}{% endblock %}
     </div>
-  </div>
 
   <script src={% static "maps/js/map.js" %}></script>
   <script type="text/javascript">
@@ -56,8 +37,5 @@
       initMap(mapObject);
     });
 
-  </script>
-
 </body>
-
 </html>

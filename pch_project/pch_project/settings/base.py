@@ -36,6 +36,8 @@ def get_secret(setting, secrets=secrets):
 
 SECRET_KEY = get_secret('SECRET_KEY')
 
+GOOGLE_API_KEY = get_secret('GOOGLE_API_KEY')
+
 DEBUG = False
 
 ALLOWED_HOSTS = []

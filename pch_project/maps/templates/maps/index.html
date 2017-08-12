@@ -1,5 +1,7 @@
 {% extends 'maps/base.html' %}
 {% block content %}
+<div class="row">
+
 
 <div class="col-xs-8">
   <div id="map"></div>
@@ -27,12 +29,23 @@
         <li class="card-text">Upload your KML here.</li>
       </ul>
 
+      {{ kml_url }}
 
     </div>
   </div>
 
 </div>
-
+</div>
+<div class="row">
+  <div class="col-sm-8">
+    <form action="/action_page.php" method="get">
+      <input id="arterial" type="checkbox" name="vehicle" value="Bike">Arterial Reconstruction<br>
+      <input id="residential" type="checkbox" name="vehicle" value="Car" checked="checked">Residential Reconstruction<br>
+      <input id="pavement" type="checkbox" name="vehicle" value="Car" checked="checked">Pavement Projects<br>
+      <input id="sidewalk" type="checkbox" name="vehicle" value="Car" checked="checked">Sidewalk Construction<br>
+    </form>
+  </div>
+</div>
 
 {% load static %}
 <script src={% static "maps/js/map.js" %}></script>
@@ -43,9 +56,11 @@
       }
       initMap(mapObject);
 
-      addKml('https://drive.google.com/uc?export=download&id=0B4Ww4gGrDx6nV2RSckcwMlNMb0E');
-      addKml('https://drive.google.com/uc?export=download&id=0B4Ww4gGrDx6nREEyeXkyYm9BRjQ');
-      addKml('https://drive.google.com/uc?export=download&id=0B4Ww4gGrDx6nbV9JZmo4b1pmU0k');
+      addKml('{{ kml_url|safe }}');
+      //addKml('https://drive.google.com/uc?export=download&id=0B4Ww4gGrDx6nV2RSckcwMlNMb0E');
+      //addKml('https://drive.google.com/uc?export=download&id=0B4Ww4gGrDx6nV2RSckcwMlNMb0E');
+      //addKml('https://drive.google.com/uc?export=download&id=0B4Ww4gGrDx6nREEyeXkyYm9BRjQ');
+      //addKml('https://drive.google.com/uc?export=download&id=0B4Ww4gGrDx6nbV9JZmo4b1pmU0k');
     });
   </script>
 

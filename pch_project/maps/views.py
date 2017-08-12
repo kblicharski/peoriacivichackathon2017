@@ -10,4 +10,4 @@ def index(request):
             instance.save()
     else:
         form = RouteForm()
-    return render(request, 'maps/base.html', {'form': form})
+    return render(request, 'maps/index.html', {'form': form})

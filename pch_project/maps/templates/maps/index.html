@@ -1,9 +1,24 @@
 {% extends 'maps/base.html' %}
 {% block content %}
 
-<div id="map"></div>
+
+        <div class="col-xs-8">
+            <div id="map"></div>
+        </div>
+
+
+
+        <div class="col-sm-4">
+            <p>Submit your route</p>
+
+                {% load crispy_forms_tags %}
+                {% crispy form %}
+
+        </div>
+
+
   <script>
-    var map;
+    let map;
 
     function initMap() {
       map = new google.maps.Map(document.getElementById('map'), {
@@ -11,11 +26,24 @@
           lat: 40.6936,
           lng: -89.5890
         },
-        zoom: 12
+        zoom: 13
       });
+      map.data.loadGeoJson('http://127.0.0.1:8000/static/maps/ArterialRecon.geojson');
     }
 
   </script>
+
+  <style>
+    map.data.setStyle( {
+      fillColor: '#2687bf',
+      fillOpacity: .3,
+      strokeWeight: 0
+    }
+    );
+  </style>
+
+
+
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA22pBq2fiCjK712IAkC5W3PyRJHlkUtZs&callback=initMap" async
     defer></script>
 

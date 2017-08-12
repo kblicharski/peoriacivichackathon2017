@@ -13,36 +13,21 @@ function initMap(mapObject) {
 }
 
 function loadData() {
-  let data = [{
-      'url': 'http://127.0.0.1:8000/static/maps/ArterialRecon.geojson',
-      'color': 'blue'
-    },
-    {
-      'url': 'http://127.0.0.1:8000/static/maps/Pavement2017.geojson',
-      'color': 'red'
-    },
-    /* {
-      'url': 'http://127.0.0.1:8000/static/maps/RampConstruction.geojson',
-      'color': 'green'
-    }, */
-    {
-      'url': 'http://127.0.0.1:8000/static/maps/ResidentialRecon.geojson',
-      'color': 'purple'
-    },
-    {
-      'url': 'http://127.0.0.1:8000/static/maps/SidewalkConstruction.geojson',
-      'color': 'orange'
-    }
+  let urls = [
+      'http://127.0.0.1:8000/static/maps/ArterialRecon.geojson',
+      'http://127.0.0.1:8000/static/maps/Pavement2017.geojson',
+      'http://127.0.0.1:8000/static/maps/ResidentialRecon.geojson',
+      'http://127.0.0.1:8000/static/maps/SidewalkConstruction.geojson'
   ];
 
-  for (elem of data) {
-    map.data.loadGeoJson(elem['url']);
+  for (url of urls) {
+    map.data.loadGeoJson(url);
     let color = 'blue';
     map.data.setStyle(
       {
         fillColor: color,
         strokeColor: color,
-        strokeWeight: 2
+        strokeWeight: 2.5
       }
     );
   }

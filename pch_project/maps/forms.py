@@ -4,7 +4,7 @@ from crispy_forms.layout import Submit
 
 class RouteForm(forms.Form):
     name = forms.CharField(max_length=30)
-    kml = forms.FileField(help_text='Upload a .kml file')
+    kml_url = forms.URLField()
 
     def __init__(self, *args, **kwargs):
         super(RouteForm, self).__init__(*args, **kwargs)

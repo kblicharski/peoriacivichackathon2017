@@ -5,100 +5,59 @@
   <meta name="viewport" content="initial-scale=1.0">
   <meta charset="utf-8">
   <title>Simple Map</title>
-  <!-- including JS, JQuery, and Bootstrap -->
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <!-- including custom stylesheet -->
   {% load static %}
   <link rel="stylesheet" type="text/css" href="{% static 'maps/style.css' %}">
-  <style>
-    /* Always set the map height explicitly to define the size of the div
-    * element that contains the map. */
-
-    #map {
-      height: 60vh;
-}
-
-    /* Optional: Makes the sample page fill the window. */
-
-    html,
-    body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      background: transparent;
-    }
-
-  </style>
-
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA22pBq2fiCjK712IAkC5W3PyRJHlkUtZs&callback=initMap" async
+    defer></script>
 </head>
 
 <body>
-<div class="container">
+  <div class="container">
     <div class="row">
-        <div class="col-sm-12">
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="{% url 'index' %}">WebSiteName</a>
-                    </div>
-                    <ul class="nav navbar-nav">
-                        <li><a href="#">Link 1</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
+      <div class="col-sm-12">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="{% url 'index' %}">WebSiteName</a>
+            </div>
+            <ul class="nav navbar-nav">
+              <li><a href="#">Link 1</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
     </div>
-
     <div class="row">
-        <div class="col-xs-7">
-            <div id="map"></div>
-        </div>
-
-
-
-        <div class="col-sm-5">
-            <p>Submit your route</p>
-            <form method="post" action="" enctype=multipart/form-data>
-                {% csrf_token %}
-                {{ form.as_p }}
-                <input type="submit" value="submit">
-            </form>
-        </div>
+      <div class="col-xs-7">
+        <div id="map"></div>
+      </div>
+      <div class="col-sm-5">
+        <p>Submit your route</p>
+        <form method="post" action="" enctype=multipart/form-data>
+          {% csrf_token %} {{ form.as_p }}
+          <input type="submit" value="submit">
+        </form>
+      </div>
     </div>
   </div>
 
-  <script>
-    let map;
-
-    function initMap() {
-      map = new google.maps.Map(document.getElementById('map'), {
-        center: {
-          lat: 40.6936,
-          lng: -89.5890
-        },
-        zoom: 13
-      });
-      map.data.loadGeoJson('http://127.0.0.1:8000/static/maps/ArterialRecon.geojson');
-    }
+  <script src={% static "maps/js/map.js" %}></script>
+  <script type="text/javascript">
+    $(window).on('load', function() {
+      mapObject = {
+        mapDiv: document.getElementById('map')
+      }
+      initMap(mapObject);
+    });
 
   </script>
 
-  <style>
-    map.data.setStyle( {
-      fillColor: '#2687bf',
-      fillOpacity: .3,
-      strokeWeight: 0
-    }
-    );
-  </style>
-
-
-  <!-- <script src={% static "/js/map.js" %}></script> -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA22pBq2fiCjK712IAkC5W3PyRJHlkUtZs&callback=initMap" async
-    defer></script>
-</div>
 </body>
 
 </html>

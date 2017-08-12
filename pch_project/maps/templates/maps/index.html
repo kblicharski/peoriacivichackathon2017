@@ -14,9 +14,6 @@
   <p>Submit your route</p>
     {% load crispy_forms_tags %}
     {% crispy form %}
-<<<<<<< HEAD
-</div>
-=======
   <div class="card">
     <!--Card content-->
     <div class="card-body">
@@ -29,13 +26,29 @@
         <li class="card-text">Select "export as KML" in the menu next to the map name. Select to export only your direction layer as a KML.</li>
         <li class="card-text">Upload your KML here.</li>
       </ul>
-      {{ kml_url }}
-
 
     </div>
   </div>
 
 </div>
 
->>>>>>> 182856913458a7d229fb26c8f3c3e3bc7a5c83a7
+
+{% load static %}
+<script src={% static "maps/js/map.js" %}></script>
+<!-- <script src={% static "maps/js/gegeoxml3.js" %}></script> -->
+<!-- <script src="https://github.com/geocodezip/geoxml3/blob/master/polys/geoxml3.js"></script> -->
+  <script type="text/javascript">
+    $(window).on('load', function() {
+      mapObject = {
+        mapDiv: document.getElementById('map')
+      }
+      initMap(mapObject);
+
+      // if ('{{ kml_url }}') {
+      addKml('https://drive.google.com/uc?export=download&id=0B4Ww4gGrDx6nV2RSckcwMlNMb0E');
+        // addKml('http://127.0.0.1:8000{{ kml_url }}');
+      // }
+    });
+  </script>
+
 {% endblock %}

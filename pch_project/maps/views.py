@@ -6,12 +6,12 @@ from .models import Route
 def index(request):
     context = {}
     if request.method == 'POST':
-        form = RouteForm(request.POST, request.FILES)
+        form = RouteForm(request.POST)
         if form.is_valid():
-            instance = Route(name=request.POST['name'], kml=request.FILES['kml'])
+            instance = Route(name=request.POST['name'], kml=request.POST['kml_url'])
             instance.save()
             messages.add_message(request, messages.SUCCESS, 'Successful upload!')
-            context['kml_url'] = instance.kml.url
+            context['kml_url'] = instance.kml
     else:
         form = RouteForm()
     context['form'] = form

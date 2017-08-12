@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta name="viewport" content="initial-scale=1.0">
-    <meta charset="utf-8">
-    <title>Simple Map</title>
-    <!-- including JS, JQuery, and Bootstrap -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <!-- including custom stylesheet -->
-    {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-    <style>
+  <meta name="viewport" content="initial-scale=1.0">
+  <meta charset="utf-8">
+  <title>Simple Map</title>
+  <!-- including JS, JQuery, and Bootstrap -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- including custom stylesheet -->
+  <!-- {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"> -->
+  <style>
     /* Always set the map height explicitly to define the size of the div
     * element that contains the map. */
 
@@ -28,16 +29,11 @@
       background: transparent;
     }
 
-    </style>
+  </style>
+
 </head>
 
 <body>
-<div class="container">
-    <div class="row">
-        <div class="col-sm-12" id="map">
-
-        </div>
-    </div>
 
     <div class="row">
         <div class="col-sm-12">
@@ -69,8 +65,6 @@
 
   </script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA22pBq2fiCjK712IAkC5W3PyRJHlkUtZs&callback=initMap" async defer></script>
-
-
 
 </body>
 

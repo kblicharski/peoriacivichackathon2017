@@ -10,6 +10,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <!-- including custom stylesheet -->
+  <!-- {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"> -->
   <style>
     /* Always set the map height explicitly to define the size of the div
     * element that contains the map. */
@@ -28,15 +30,21 @@
     }
 
   </style>
+
 </head>
 
 <body>
-  <!-- {% load static %} -->
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12" id="map">
 
-      </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <form method="post" action="" enctype=multipart/form-data>
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" value="submit">
+            </form>
+            {{ form.errors }}
+                {{ form.non_field_errors }}
+        </div>
     </div>
   </div>
   <script>

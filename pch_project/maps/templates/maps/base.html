@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   {% load static %}
   <link rel="stylesheet" type="text/css" href="{% static 'maps/style.css' %}">
+  <!-- Change so that we aren't publicly displaying our API key -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA22pBq2fiCjK712IAkC5W3PyRJHlkUtZs&callback=initMap" async
     defer></script>
 </head>
@@ -28,16 +29,5 @@
         {% block content %}{% endblock %}
     </div>
 
-  <script src={% static "maps/js/map.js" %}></script>
-  <script type="text/javascript">
-    $(window).on('load', function() {
-      mapObject = {
-        mapDiv: document.getElementById('map')
-      }
-      initMap(mapObject);
-    });
-    </script>
-
-</div>
 </body>
 </html>

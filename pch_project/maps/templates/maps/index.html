@@ -33,4 +33,23 @@
 
 </div>
 
+
+{% load static %}
+<script src={% static "maps/js/map.js" %}></script>
+<!-- <script src={% static "maps/js/gegeoxml3.js" %}></script> -->
+<!-- <script src="https://github.com/geocodezip/geoxml3/blob/master/polys/geoxml3.js"></script> -->
+  <script type="text/javascript">
+    $(window).on('load', function() {
+      mapObject = {
+        mapDiv: document.getElementById('map')
+      }
+      initMap(mapObject);
+
+      // if ('{{ kml_url }}') {
+      addKml('https://drive.google.com/uc?export=download&id=0B4Ww4gGrDx6nV2RSckcwMlNMb0E');
+        // addKml('http://127.0.0.1:8000{{ kml_url }}');
+      // }
+    });
+  </script>
+
 {% endblock %}

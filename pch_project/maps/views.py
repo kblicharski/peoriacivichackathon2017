@@ -11,7 +11,7 @@ def index(request):
             instance = Route(name=request.POST['name'], kml=request.FILES['kml'])
             instance.save()
             messages.add_message(request, messages.SUCCESS, 'Successful upload!')
-            context['kml_url'] = instance.kml
+            context['kml_url'] = instance.kml.url
     else:
         form = RouteForm()
     context['form'] = form

@@ -9,7 +9,7 @@ function initMap(mapObject) {
     zoom: 13
   });
 
-  loadData();
+  loadData(mapObject.checkedProjects);
 }
 
 function loadData() {
@@ -22,7 +22,7 @@ function loadData() {
 
   for (url of urls) {
     map.data.loadGeoJson(url);
-    let color = 'blue';
+    let color = 'green';
     map.data.setStyle(
       {
         fillColor: color,
@@ -36,8 +36,8 @@ function loadData() {
 function addKml(kmlPath) {
   let ctaLayer = new google.maps.KmlLayer({
     'url': kmlPath,
-    'map': map
+    'map': map,
+    'suppressInfoWindows': true
   });
 
-  console.log(ctaLayer.getUrl());
 }

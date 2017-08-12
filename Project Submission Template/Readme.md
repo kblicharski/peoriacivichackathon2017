@@ -20,5 +20,7 @@ Bootstrap
 ## Team Members
 
 kblicharski https://github.com/kblicharski/
+
 madsilva https://github.com/madsilva/
+
 sgoskowicz https://github.com/sgoskowicz
